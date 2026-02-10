@@ -18,8 +18,8 @@ repositories {
 
 dependencies {
     //minor
-    implementation "com.google.guava:guava:33.4.8-jre"
-    implementation "org.jooq:jooq:3.20.9"
+    implementation "com.google.guava:guava:33.5.0-jre"
+    implementation "org.jooq:jooq:3.20.11"
 
     //major
     implementation "org.slf4j:slf4j-api:1.7.36"
