@@ -24,7 +24,7 @@ dependencies {
     //major
     implementation "org.slf4j:slf4j-api:1.7.36"
     // Source: https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine
-    implementation 'com.github.ben-manes.caffeine:caffeine:2.9.3'
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.2.3'
 }
 
 application {
