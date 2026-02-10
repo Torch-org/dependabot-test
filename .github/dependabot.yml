@@ -9,6 +9,11 @@ updates:
       dependencies:
         patterns:
           - "*"
+      update-types:
+        - "minor"
+        - "patch"
+    assignees:
+      - "Torch-org/dev"
   # For GitHub Actions workflows, update all actions
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -18,3 +23,5 @@ updates:
       github-actions:
         patterns:
           - "*"
+    assignees:
+      - "Torch-org/dev"
