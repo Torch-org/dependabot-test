@@ -22,7 +22,7 @@ dependencies {
     implementation 'com.scalar-labs:scalardb:3.11.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
     // Source: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
-    testImplementation 'com.microsoft.sqlserver:mssql-jdbc:12.10.2.jre8'
+    testImplementation 'com.microsoft.sqlserver:mssql-jdbc:13.2.1.jre8'
 }
 
 application {
