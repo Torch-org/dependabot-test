@@ -24,7 +24,7 @@ dependencies {
     // Source: https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
     implementation 'com.microsoft.sqlserver:mssql-jdbc:12.10.2.jre8'
     // Source: https://mvnrepository.com/artifact/org.postgresql/postgresql
-    implementation 'org.postgresql:postgresql:9.4.1212'
+    implementation 'org.postgresql:postgresql:42.7.9'
 }
 
 application {
