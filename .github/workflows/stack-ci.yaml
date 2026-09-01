@@ -1,0 +1,40 @@
+name: Stack CI
+
+on:
+  pull_request:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "hello"
+
+  # Dumps the stack payload so we can compare a real gh-stack stack against
+  # pull requests that are merely chained by base branch.
+  stack-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show stack metadata
+        env:
+          STACK: ${{ toJSON(github.event.pull_request.stack) }}
+        run: |
+          echo "base.ref:       ${{ github.event.pull_request.base.ref }}"
+          echo "stack.number:   ${{ github.event.pull_request.stack.number }}"
+          echo "stack.size:     ${{ github.event.pull_request.stack.size }}"
+          echo "stack.position: ${{ github.event.pull_request.stack.position }}"
+          echo "stack.base.ref: ${{ github.event.pull_request.stack.base.ref }}"
+          echo "raw stack: $STACK"
+
+  # The pull request currently targeting the stack base directly.
+  bottom-only:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.stack != null && github.event.pull_request.stack.base.ref == github.event.pull_request.base.ref
+    steps:
+      - run: echo "hello from the lowest unmerged PR (position ${{ github.event.pull_request.stack.position }})"
+
+  top-only:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.stack != null && github.event.pull_request.stack.position == github.event.pull_request.stack.size
+    steps:
+      - run: echo "hello from the top PR (position ${{ github.event.pull_request.stack.position }} of ${{ github.event.pull_request.stack.size }})"
