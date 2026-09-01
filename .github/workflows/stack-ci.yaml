@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo "hello"
+        run: |
+          echo "hello"
+          sleep 20
 
   # Dumps the stack payload so we can compare a real gh-stack stack against
   # pull requests that are merely chained by base branch.
